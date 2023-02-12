@@ -1,3 +1,20 @@
+# User defined
+Debug
+Docker_Debug
+Release
+logs
+build
+.vscode
+
+# Mac
+*.DS_Store
+
+# CMake
+CMakeFiles
+CMakeCache.txt
+*.cmake
+Makefile
+
 # Prerequisites
 *.d
 
