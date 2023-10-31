@@ -16,10 +16,10 @@ include_directories(../cpplib-core/include)
 
 find_package(Boost REQUIRED COMPONENTS system)
 find_package(OpenSSL 1.0.0 REQUIRED)
+find_package(cpprestsdk REQUIRED)
 
 target_link_libraries(main
-        cpprest
-        -lstdc++fs
+        cpprestsdk::cpprest
         Boost::boost
         Boost::system
         OpenSSL::SSL

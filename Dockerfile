@@ -1,4 +1,5 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get install -y cmake clang git libboost-all-dev libcpprest-dev libaio-dev
 WORKDIR /usr/src/
