@@ -2,7 +2,6 @@
 #pragma once
 
 #include <string>
-#include <codecvt>
 #include <ylib/core/lang.h>
 #include <cpprest/http_client.h>
 #include <cpprest/uri.h>
@@ -64,8 +63,7 @@ public:
     void print(){
         std::u16string body = body_utf16();
 
-        std::wstring_convert<std::codecvt_utf8<char16_t>, char16_t> cv;
-        std::cout << cv.to_bytes(body) << endl;
+        std::wcout << body.c_str() << endl;
         fflush(stdout);
     }
 };
