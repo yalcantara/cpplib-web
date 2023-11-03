@@ -1,9 +1,12 @@
 
 #include <ylib/web/rest.h>
+#include <ylib/web/curlw.h>
 
 using namespace ylib::web;
+using namespace ylib::web::curlw;
 
 int main() {
+    
     const char* base = "https://jsonplaceholder.typicode.com";
     RestClient client{base};
 
@@ -16,6 +19,6 @@ int main() {
 
     json::value email = comments.at(0).at("email");
 
-    println(sfput("Got email of the first comment: ${}", email.as_string()));
+    println(sfput("Got email of the first comment: {}", email.as_string()));
     return EXIT_SUCCESS;
 }
