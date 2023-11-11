@@ -56,6 +56,10 @@ public:
         return response;
     }
     
+    string httpGetOk(const string url) {
+        return httpGetOk(url.c_str());
+    }
+    
     ~CurlHandle() {
         if (curl) {
             curl_easy_cleanup(curl);
@@ -67,6 +71,10 @@ namespace http {
 string get(const char *url) {
     CurlHandle handle;
     return handle.httpGetOk(url);
+}
+
+string get(const string url) {
+    return get(url.c_str());
 }
 }
 }
